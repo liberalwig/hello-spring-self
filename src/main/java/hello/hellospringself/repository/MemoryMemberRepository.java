@@ -1,6 +1,7 @@
 package hello.hellospringself.repository;
 
 import hello.hellospringself.domain.Member;
+import org.junit.jupiter.api.AfterEach;
 
 import java.util.*;
 
@@ -31,6 +32,10 @@ public class MemoryMemberRepository implements MemberRepository{
     @Override
     public List<Member> findAll() {
         return new ArrayList<>(store.values());
+    }
+
+    public void clearStore() {
+        store.clear();
     }
 
 }
